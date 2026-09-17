@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Chronicles of Emberwood</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="game-container">
+
+  <div id="topbar">
+
+    <div class="game-title">
+      🔥 Chronicles of Emberwood
+    </div>
+
+    <div class="stats">
+      <span>❤️ <b id="hp">100</b>/100</span>
+      <span>⭐ <b id="xp">0</b></span>
+      <span>🪙 <b id="coins">0</b></span>
+      <span>🧪 <b id="potions">2</b></span>
+    </div>
+
+  </div>
+
+  <div id="canvas-wrapper">
+
+    <canvas id="game" width="960" height="540"></canvas>
+
+    <div id="quest-box">
+      <b>📜 Nhiệm vụ</b>
+      <div id="quest-text">
+        Hãy nói chuyện với trưởng làng.
+      </div>
+    </div>
+
+    <div id="message"></div>
+
+    <div id="start-screen">
+
+      <div class="menu">
+
+        <div class="logo">
+          🔥
+        </div>
+
+        <h1>Chronicles of Emberwood</h1>
+
+        <p>
+          Một cuộc phiêu lưu nhỏ trong khu rừng Emberwood.
+        </p>
+
+        <div class="controls">
+
+          <p>🕹️ <b>WASD / Mũi tên</b> — Di chuyển</p>
+          <p>⚔️ <b>SPACE</b> — Tấn công</p>
+          <p>💬 <b>E</b> — Nói chuyện / tương tác</p>
+          <p>🧪 <b>Q</b> — Uống potion</p>
+
+        </div>
+
+        <button id="start-button">
+          ▶ BẮT ĐẦU PHIÊU LƯU
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Mobile controls -->
+
+  <div id="mobile-controls">
+
+    <div class="dpad">
+
+      <button data-key="ArrowUp">▲</button>
+
+      <div>
+        <button data-key="ArrowLeft">◀</button>
+        <button data-key="ArrowDown">▼</button>
+        <button data-key="ArrowRight">▶</button>
+      </div>
+
+    </div>
+
+    <div class="action-buttons">
+
+      <button data-key="Space" class="attack">
+        ⚔️
+      </button>
+
+      <button data-key="KeyE">
+        E
+      </button>
+
+      <button data-key="KeyQ">
+        🧪
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="footer">
+    WASD / Mũi tên: di chuyển · SPACE: đánh · E: tương tác · Q: hồi máu
+  </div>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
