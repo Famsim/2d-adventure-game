@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background: #10151c;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#game-container {
+  width: min(100%, 1100px);
+  padding: 12px;
+}
+
+#topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: #18212c;
+  border: 2px solid #354556;
+  border-bottom: none;
+  border-radius: 14px 14px 0 0;
+  padding: 12px 16px;
+}
+
+.game-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  font-size: 15px;
+}
+
+.stats span {
+  white-space: nowrap;
+}
+
+#canvas-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: #182d1c;
+}
+
+#quest-box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 260px;
+  background: rgba(12, 17, 22, 0.85);
+  border: 1px solid #d9b44a;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+#quest-box b {
+  color: #ffd65a;
+}
+
+#quest-text {
+  margin-top: 5px;
+}
+
+#message {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  min-width: 280px;
+  max-width: 80%;
+  text-align: center;
+  background: rgba(10, 12, 16, 0.92);
+  border: 1px solid #e1bf55;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 15px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+#message.show {
+  opacity: 1;
+}
+
+#start-screen {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 9, 13, 0.78);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+}
+
+.menu {
+  width: min(90%, 520px);
+  text-align: center;
+  background: #151d27;
+  border: 2px solid #7e6831;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-size: 55px;
+}
+
+.menu h1 {
+  margin: 8px 0 10px;
+  color: #ffd45b;
+  font-size: 30px;
+}
+
+.menu p {
+  color: #ccd4dd;
+}
+
+.controls {
+  margin: 20px 0;
+  text-align: left;
+  background: #0d131a;
+  border-radius: 10px;
+  padding: 12px 15px;
+}
+
+.controls p {
+  margin: 7px 0;
+  font-size: 14px;
+}
+
+#start-button {
+  border: none;
+  border-radius: 9px;
+  padding: 13px 22px;
+  background: #e0aa32;
+  color: #18120a;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#start-button:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+#mobile-controls {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #141c25;
+  border: 2px solid #354556;
+  border-top: none;
+}
+
+.dpad {
+  text-align: center;
+}
+
+.dpad > button,
+.dpad div button {
+  width: 52px;
+  height: 48px;
+  margin: 2px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-buttons button {
+  width: 55px;
+  height: 55px;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.dpad button,
+.action-buttons button {
+  border: 1px solid #536273;
+  background: #253242;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.action-buttons .attack {
+  background: #743532;
+}
+
+.dpad button:active,
+.action-buttons button:active {
+  transform: scale(0.92);
+  background: #3d4d61;
+}
+
+#footer {
+  text-align: center;
+  color: #7f8c99;
+  padding: 9px;
+  font-size: 12px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  body {
+    align-items: flex-start;
+    padding-top: 5px;
+  }
+
+  #game-container {
+    padding: 5px;
+  }
+
+  #topbar {
+    padding: 9px;
+  }
+
+  .game-title {
+    font-size: 14px;
+  }
+
+  .stats {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  #quest-box {
+    width: 190px;
+    top: 8px;
+    left: 8px;
+    font-size: 10px;
+  }
+
+  .menu {
+    padding: 20px 15px;
+  }
+
+  .menu h1 {
+    font-size: 21px;
+  }
+
+  .menu p {
+    font-size: 12px;
+  }
+
+  .controls {
+    margin: 12px 0;
+  }
+
+  .controls p {
+    font-size: 11px;
+  }
+
+  #mobile-controls {
+    display: flex;
+  }
+
+  #footer {
+    font-size: 10px;
+  }
+}
